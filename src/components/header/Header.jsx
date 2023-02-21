@@ -14,7 +14,7 @@ const Header = () => {
     <>
       <Box className="header" color={"#000"} top={0} left={0}>
 
-        <Container as={Stack} maxW={"6xl"} py={5}>
+        <Container as={Stack} maxW={"6xl"} py={4}>
           <SimpleGrid
             templateColumns={{
               sm: "1fr 1fr",
@@ -23,13 +23,13 @@ const Header = () => {
             spacing={4}
             py={8}
             fontFamily="inherit"
-            fontSize={"22px"}
+            fontSize={"20px"}
           >
             <Stack align={"flex-start"}>
               <Link href="/#noCodeTools">
                 <Image
-                  w={"200px"}
-                  marginRight={"10px"}
+                  w={"100%"}
+                  marginRight={"15px"}
                   src={
                     "https://res.cloudinary.com/sendchamp/image/upload/v1647472661/Sendchamp%20Website/logos/NavLogo_nhyqah.svg"
                   }
@@ -60,7 +60,7 @@ const Header = () => {
                 colorScheme={"green"}
                 bg={"#197EEF"}
                 rounded={"12px"}
-                px={8}
+                px={5}
                 py={5}
                 _hover={{
                   bg: "#3375B9",
