@@ -15,8 +15,13 @@ import {
   Divider,
 } from "@chakra-ui/react";
 import msg from "../../components/assets/msg.png";
+import whatsapp from "../../components/assets/whatsapp.png";
+import voice from "../../components/assets/voice.png";
+import verification from "../../components/assets/verification.png";
+import email from "../../components/assets/email.png";
 import { CountryListAtom } from "../../recoil/atom/CountryAtom";
 import { pricingList } from "../Data";
+
 const PricingCards = () => {
   let CountryList = useRecoilValue(CountryListAtom)[0] || pricingList[0];
   console.log(CountryList);
@@ -33,7 +38,21 @@ const PricingCards = () => {
             (service, key) => (
               <Card className="card" key={key}>
                 <CardHeader>
-                  <Image width={"64px"} height={"64px"} src={msg} />
+                  {service === "whatsapp" && (
+                    <Image width={"64px"} height={"64px"} src={whatsapp} />
+                  )}
+                  {service === "sms" && (
+                    <Image width={"64px"} height={"64px"} src={msg} />
+                  )}
+                  {service === "voice" && (
+                    <Image width={"64px"} height={"64px"} src={voice} />
+                  )}
+                  {service === "email" && (
+                    <Image width={"64px"} height={"64px"} src={email} />
+                  )}
+                  {service === "verification" && (
+                    <Image width={"64px"} height={"64px"} src={verification} />
+                  )}
                 </CardHeader>
                 <CardBody paddingLeft={"40px"} paddingRight={"24px"}>
                   <Text fontSize={"20px"} fontWeight={"600"} marginTop="1px">
@@ -85,17 +104,25 @@ const PricingCards = () => {
                     )}
                   </Box>
                 </CardBody>
-              { service === "whatsapp" || service === "sms" ?  (<Divider color={" #97d1f3"} />) : ""}
-               { service === "whatsapp" || service === "sms" ? (<CardFooter className="CardFooter" justify={"center"}>
-                  <Text
-                    fontSize={"20px"}
-                    textDecorationLine="underline"
-                    color={"#0555A8"}
-                    fontFamily="HafferXH,sans-serif"
-                  >
-                    More details
-                  </Text>
-                </CardFooter>) : ""}
+                {service === "whatsapp" || service === "sms" ? (
+                  <Divider color={" #97d1f3"} />
+                ) : (
+                  ""
+                )}
+                {service === "whatsapp" || service === "sms" ? (
+                  <CardFooter className="CardFooter" justify={"center"}>
+                    <Text
+                      fontSize={"20px"}
+                      textDecorationLine="underline"
+                      color={"#0555A8"}
+                      fontFamily="sans-serif"
+                    >
+                      More details
+                    </Text>
+                  </CardFooter>
+                ) : (
+                  ""
+                )}
               </Card>
             )
           )}
