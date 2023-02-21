@@ -24,6 +24,7 @@ const Header = () => {
             py={8}
             fontFamily="inherit"
             fontSize={"20px"}
+            fontWeight="500"
           >
             <Stack align={"flex-start"}>
               <Link href="/#noCodeTools">
@@ -59,7 +60,7 @@ const Header = () => {
               <Button
                 colorScheme={"green"}
                 bg={"#197EEF"}
-                rounded={"12px"}
+                rounded={"5px"}
                 px={5}
                 py={5}
                 _hover={{
