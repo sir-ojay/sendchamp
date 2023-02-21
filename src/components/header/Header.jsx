@@ -13,7 +13,7 @@ const Header = () => {
   return (
     <>
       <Box className="header" color={"#000"} top={0} left={0}>
-      {/* <Box className="header" color={"#000"} pos={"fixed"} w={"100%" }> */}
+
         <Container as={Stack} maxW={"6xl"} py={5}>
           <SimpleGrid
             templateColumns={{
